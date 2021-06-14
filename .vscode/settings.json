@@ -20,6 +20,9 @@
     "source.organizeImports": true
   },
   "eslint.alwaysShowStatus": true,
+  //   {
+  //     "eslint.enable": false
+  // },
   // emmet
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
