@@ -18,6 +18,8 @@
   },
 
   "rules": {
+    "react/prefer-stateless-function": 0,
+    "react/jsx-no-bind": 0,
     "class-methods-use-this": 0,
     "react/react-in-jsx-scope": 0,
     "react-hooks/rules-of-hooks": "error",

@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 /*  eslint-disable react/destructuring-assignment */
 // eslint-disable-next-line react/prefer-stateless-function
 class Clock extends React.Component {
@@ -36,17 +37,19 @@ class Clock extends React.Component {
     }
 
     render() {
-        const { newDate, locale, toggle } = this.state;
+        const { newDate, locale } = this.state;
+        let button;
+        if (locale === 'bn-BD') {
+            button = <Button change={this.handleClick} locale="en-US" />;
+        } else {
+            button = <Button change={this.handleClick} locale="bn-BD" />;
+        }
         return (
-            <div>
+            <>
                 <h1>Hello, world! </h1>
-                <h3>{toggle}</h3>
                 <h2>It is {newDate.toLocaleTimeString(locale)}.</h2>
-                {/* <h3>{children}</h3> */}
-                <button onClick={() => this.handleClick('en-US')} type="submit">
-                    Do dit
-                </button>
-            </div>
+                {button}
+            </>
         );
     }
 }
