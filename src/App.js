@@ -1,9 +1,9 @@
-import Form from './components/Form';
+import Calculator from './components/Lifting-up-State/Calculator';
 
 function App() {
     return (
         <div>
-            <Form />
+            <Calculator />
         </div>
     );
 }
