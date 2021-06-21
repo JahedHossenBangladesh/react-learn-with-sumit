@@ -1,9 +1,11 @@
-import Calculator from './components/Lifting-up-State/Calculator';
+import ClickCounte from './components/High-order-component/ClickCounter';
+import HoverCounter from './components/High-order-component/HoverCounter';
 
 function App() {
     return (
         <div>
-            <Calculator />
+            <ClickCounte />
+            <HoverCounter />
         </div>
     );
 }
