@@ -13,8 +13,13 @@ function content() {
             <Counter>
                 {(count, increment) => (
                     <ThemeContext.Consumer>
-                        {({ theme }) => (
-                            <ClickCount theme={theme} count={count} increment={increment} />
+                        {({ theme, switchTheme }) => (
+                            <ClickCount
+                                theme={theme}
+                                switchTheme={switchTheme}
+                                count={count}
+                                increment={increment}
+                            />
                         )}
                     </ThemeContext.Consumer>
                 )}

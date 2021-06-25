@@ -9,6 +9,19 @@ class ContextApiApp extends React.Component {
         theme: 'red',
     };
 
+    switchTheme = () => {
+        this.setState(({ theme }) => {
+            if (theme === 'red') {
+                return {
+                    theme: 'pink',
+                };
+            }
+            return {
+                theme: 'red',
+            };
+        });
+    };
+
     render() {
         const { theme } = this.state;
         return (
@@ -18,7 +31,7 @@ class ContextApiApp extends React.Component {
                         <HoverCounter count={count} increment={increment} theme={theme} />
                     )}
                 </Counter>
-                <ThemeContext.Provider value={{ theme }}>
+                <ThemeContext.Provider value={{ theme, switchTheme: this.switchTheme }}>
                     <Section theme={theme} />
                 </ThemeContext.Provider>
             </>
