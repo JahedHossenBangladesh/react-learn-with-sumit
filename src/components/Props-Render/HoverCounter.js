@@ -3,9 +3,9 @@ import React from 'react';
 const HoverCounter = (props) => {
     const { count, increment, theme } = props;
     const style =
-        theme === 'red'
+        theme.theme === 'red'
             ? {
-                  backgroundColor: theme,
+                  backgroundColor: theme.theme,
                   color: 'white',
               }
             : null;

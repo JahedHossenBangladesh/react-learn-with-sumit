@@ -7,32 +7,30 @@ import Section from './Section';
 class ContextApiApp extends React.Component {
     state = {
         theme: 'red',
-    };
-
-    switchTheme = () => {
-        this.setState(({ theme }) => {
-            if (theme === 'red') {
+        switchTheme: () => {
+            this.setState(({ theme }) => {
+                if (theme === 'red') {
+                    return {
+                        theme: 'pink',
+                    };
+                }
                 return {
-                    theme: 'pink',
+                    theme: 'red',
                 };
-            }
-            return {
-                theme: 'red',
-            };
-        });
+            });
+        },
     };
 
     render() {
-        const { theme } = this.state;
         return (
             <>
                 <Counter>
                     {(count, increment) => (
-                        <HoverCounter count={count} increment={increment} theme={theme} />
+                        <HoverCounter count={count} increment={increment} theme={this.state} />
                     )}
                 </Counter>
-                <ThemeContext.Provider value={{ theme, switchTheme: this.switchTheme }}>
-                    <Section theme={theme} />
+                <ThemeContext.Provider value={this.state}>
+                    <Section theme={this.state} />
                 </ThemeContext.Provider>
             </>
         );
