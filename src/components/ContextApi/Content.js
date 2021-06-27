@@ -3,29 +3,32 @@ import ClickCount from '../Props-Render/ClickCount';
 import Counter from '../Props-Render/Counter';
 import ThemeContext from './Contexts/themeContext';
 
-function content() {
+export default class Content extends React.Component {
     // const style = {
     //     backgroundColor: theme,
     // };
-    return (
-        <div>
-            <h1>This is Content</h1>
-            <Counter>
-                {(count, increment) => (
-                    <ThemeContext.Consumer>
-                        {({ theme, switchTheme }) => (
-                            <ClickCount
-                                theme={theme}
-                                switchTheme={switchTheme}
-                                count={count}
-                                increment={increment}
-                            />
-                        )}
-                    </ThemeContext.Consumer>
-                )}
-            </Counter>
-        </div>
-    );
+    // contextType use in functional component
+    // const context = useContext(ThemeContext);
+    // const {theme,switchTheme} = context;
+
+    render() {
+        const { theme, switchTheme } = this.context;
+        return (
+            <div>
+                <h1>This is Content</h1>
+                <Counter>
+                    {(count, increment) => (
+                        <ClickCount
+                            theme={theme}
+                            switchTheme={switchTheme}
+                            count={count}
+                            increment={increment}
+                        />
+                    )}
+                </Counter>
+            </div>
+        );
+    }
 }
 
-export default content;
+Content.contextType = ThemeContext;
