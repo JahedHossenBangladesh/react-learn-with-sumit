@@ -13,7 +13,7 @@ function Todo() {
         <>
             <p>{todo}</p>
             <p>
-                <textarea name="todo" value={todo} onChange={(e) => handleInput(e)} />
+                <textarea name="todo" value={todo} onChange={handleInput} />
             </p>
             <br />
             <h2>{worning || 'Good Choice!'} </h2>

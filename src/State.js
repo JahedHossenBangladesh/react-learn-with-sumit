@@ -1,10 +1,11 @@
 import React from 'react';
-import Todo from './components/UseState/Todo';
+import StateRules from './components/UseState/StateRules';
 
 function States() {
     return (
         <div>
-            <Todo />
+            {/* <Todo /> */}
+            <StateRules />
         </div>
     );
 }
