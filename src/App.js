@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import MyComponents from './components/useEffect/MyComponents';
+import Appcallback from './components/UseCallback&UseMemory/App';
 
 function App() {
     // const [show, setShow] = useState(true);
-    return (
-     
-    );
+    return <Appcallback />;
 }
 
 export default App;
